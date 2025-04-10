@@ -19,7 +19,7 @@ export default function Home() {
                 <div className="hero-image-wrapper overflow-hidden relative">
                     <img
                         className="grayscale absolute bottom-0 object-cover w-full"
-                        src="../assets/hero.jpg"
+                        src="/assets/hero.jpg"
                     />
                 </div>
             </div>
