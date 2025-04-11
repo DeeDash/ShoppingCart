@@ -8,7 +8,6 @@ import Cart from "./pages/Cart.jsx";
 import ProductProvider from "./context/ProductContext.jsx";
 import CartProvider from "./context/CartContext.jsx";
 import Overlay from "./sections/Overlay.jsx";
-import Header from "./sections/Header.jsx";
 
 import "./main.css";
 
