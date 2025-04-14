@@ -6,17 +6,9 @@ import Home from "./pages/Home.jsx";
 import Collections from "./pages/Collections.jsx";
 import Cart from "./pages/Cart.jsx";
 import ProductProvider from "./context/ProductContext.jsx";
-import CartProvider from "./context/CartContext.jsx";
 import Overlay from "./sections/Overlay.jsx";
 
 import "./main.css";
-
-/*
-username: deedash
-email: deedash@example.com
-password: deedash123
-userId: 11
-*/
 
 const router = createBrowserRouter([
     {
