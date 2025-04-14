@@ -47,10 +47,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
     <ProductProvider>
-        <CartProvider>
-            <StrictMode>
-                <RouterProvider router={router} />
-            </StrictMode>
-        </CartProvider>
+        <StrictMode>
+            <RouterProvider router={router} />
+        </StrictMode>
     </ProductProvider>
 );
