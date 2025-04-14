@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import Header from "../sections/Header";
 import { CartContext } from "../context/CartContext";
 
