@@ -1,9 +1,9 @@
-import { useContext, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { useCartStore } from "../store/useCartStore";
 
 import Header from "../sections/Header";
-import { ProductContext } from "../context/ProductContext";
+import { useProductStore } from "../store/useProductStore";
 
 export default function Collections() {
     return (
@@ -15,7 +15,14 @@ export default function Collections() {
 }
 
 function ProductListing() {
-    const { products } = useContext(ProductContext);
+    const { products, fetchProducts, error } = useProductStore();
+    useEffect(() => {
+        fetchProducts();
+    }, []);
+
+    if (error) {
+        return <div>Error: {error}</div>;
+    }
 
     return (
         <div className="grid gap-1 grid-cols-2 px-3 mt-[4rem] md:grid-cols-3 md:px-5 lg:grid-cols-4 lg:px-10 xl:grid-cols-5 xl:px-20">
