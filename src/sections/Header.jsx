@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import NavLinkItem from "./NavLinkItem";
-import { useContext } from "react";
-import { CartContext } from "../context/CartContext";
+
+import { useCartStore } from "../store/useCartStore";
 
 export default function Header() {
-    const { cart } = useContext(CartContext);
+    const cart = useCartStore((state) => state.cart);
     return (
         <header className="flex justify-between bg-black/80 backdrop-blur-md w-full py-1 px-5 text-white items-center fixed top-0 z-10">
             <div>
