@@ -1,6 +1,6 @@
-import { useContext } from "react";
 import Header from "../sections/Header";
-import { CartContext } from "../context/CartContext";
+
+import { useCartStore } from "../store/useCartStore";
 
 export default function Cart() {
     return (
@@ -12,7 +12,8 @@ export default function Cart() {
 }
 
 function CartList() {
-    const { cart } = useContext(CartContext);
+    const cart = useCartStore((state) => state.cart);
+
     return cart.length === 0 ? (
         <div className="max-w-1/2 m-auto justify-center h-screen flex items-center font-st-mono grayscale text-center">
             Cart is currently empty
@@ -27,8 +28,7 @@ function CartList() {
 }
 
 function CartItem({ item }) {
-    const { updateCart } = useContext(CartContext);
-
+    const updateCart = useCartStore((state) => state.updateCart);
     function handleQuantityChange(action) {
         switch (action) {
             case "increment":

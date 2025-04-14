@@ -1,8 +1,9 @@
 import { useContext, useState } from "react";
 
+import { useCartStore } from "../store/useCartStore";
+
 import Header from "../sections/Header";
 import { ProductContext } from "../context/ProductContext";
-import { CartContext } from "../context/CartContext";
 
 export default function Collections() {
     return (
@@ -28,7 +29,7 @@ function ProductListing() {
 function ProductCard({ product }) {
     const [quantity, setQuantity] = useState(1);
 
-    const { addToCart } = useContext(CartContext);
+    const addToCart = useCartStore((state) => state.addToCart);
 
     function handleQuantityChange(action) {
         switch (action) {
